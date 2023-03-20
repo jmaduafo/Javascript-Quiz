@@ -34,13 +34,32 @@ THEN I can save my initials and score
 Github deployed website: 
 https://jmaduafo.github.io/Javascript-Quiz/Develop/
 
-Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-![alt text](assets/images/screenshot.png)
-Example: 
-![alt text](Develop/assets/images/horiseon-module1-screenshot-2.png)
+The user starts at this home page
+
+![alt text](Develop/assets/javascript-quiz1.png)
+
+After the user clicks on the "START QUIZ" button, the clock starts to run from 75 seconds
+and counts down to 0. They are presented with a set of questions and choices.
+
+![alt text](Develop/assets/javascript-quiz2.png)
+
+If the user gets a question right, then no seconds are subtracted. If a question is answered 
+wrong, then 10 seconds/points are subtracted.
+
+![alt text](Develop/assets/javascript-quiz3.png)
+
+Depending on the user's performance, they receive a comment based on their scores
+after the quiz is finished
+
+![alt text](Develop/assets/javascript-quiz4.png)
+![alt text](Develop/assets/javascript-quiz7.png)
+
+The user can then enter their initials in the input and their score and name gets recorded in
+the local storage
+
+
 
 
 ---
