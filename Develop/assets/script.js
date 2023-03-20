@@ -8,13 +8,13 @@ $(document).ready(function() {
     // Questions JSON list
     const quizQuestions = [
         {
-            main: "What is the "===" operator?",
+            main: "What is the === operator?",
             answer: [
                 {question: "A strictly equal property that returns true when two operands have the same value and type.",
                 correct: true },
                 {question: "The equal property that returns true when two operands have the same value and type.",
                 correct: false },
-                {question: "A strictly equal property that returns true when two operands have the same value and type.",
+                {question: "A strictly equal property that returns true when three operands have the same value and type.",
                 correct: false},
                 {question: "This is not an operator in Javascript.",
                 correct: false },
@@ -68,37 +68,40 @@ $(document).ready(function() {
 
     let question = 0;
 
+    // Renders the first set of questions
+    mainQuestion.text(quizQuestions[question].main)
     questionParagraph.each(function(index){
         $(this).text(quizQuestions[question].answer[index].question);
     })
 
     // Validates the questions to check if the answer chosen is correct
     questionChoice.each(function() {
-        
+        // Checks the click event on the specific div
         $(this).on("click", function(e) {
-           
             quizQuestions[question].answer.forEach(answer => {
-                console.log(answer.correct);
+                // If choice clicked is correct/true and the inner text of the choice clicked is the
+                // same as the question provided in the JSON, then the choice is correct
                 if (answer.correct && e.target.innerHTML.trim() === answer.question) {
                     setTimeout(function() {
                         $("#answer").removeClass("hidden");
                         $("#answer").text("Correct!").css("color", "#35A700");
                     }, 1500)
                     $("#answer").addClass("hidden");
-                    
-
+                
+                // If the choice clicked is wrong/false and the inner text of the choice clicked is the
+                // same as the question provided in the JSON, then the choice is incorrect
+                // Subtract 10 seconds from timer
                 } else if (!answer.correct && e.target.innerHTML.trim() === answer.question) {
-                    timerDown -= 15;
+                    timerDown -= 10;
                     setTimeout(function() {
                         $("#answer").removeClass("hidden");
                         $("#answer").text("Wrong!").css("color", "#F00000");
                     }, 1500)
                     $("#answer").addClass("hidden");
                 
-                    
-                   
                 }
-            })
+            })     
+           
                 
             if (question < 4) {
                 question++;
@@ -106,13 +109,11 @@ $(document).ready(function() {
                 question = question;
             }
             
-
             displayQuestions(question);
-
-            if (question === 4 || timerDown === 0) {
+            
+            if (question === 4 || timerDown <= 0) {
                 displayScores();
             }
-
         }            
 
         )      
@@ -120,7 +121,7 @@ $(document).ready(function() {
 
     // This function displays the questions presented in the JSON
     function displayQuestions(increase) {
-        if (question < 4 && question >= 0) {
+        if (question < 4) {
             mainQuestion.text(quizQuestions[increase].main);
 
             questionParagraph.each(function(index){
@@ -201,9 +202,6 @@ $(document).ready(function() {
 
         localStorage.setItem("scoreBoard", JSON.stringify(scoreBoard));
         renderMessage();
-
-
-        
     }
 
     // Create elements for new additions and build a class in CSS for
@@ -276,8 +274,7 @@ $(document).ready(function() {
 
     // When "CLEAR SCORES", delete all entries
     $("#clear").on("click", function() {
-        localStorage.removeItem("scoreBoard");
-        scoreKeeper.removeClass("score-board")        
+        scoreKeeper.remove();       
     })
 
 })

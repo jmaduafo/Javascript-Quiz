@@ -344,6 +344,9 @@ header {
     }
 
     /* -------------START QUIZ PAGE------------- */
+    .start {
+        width: 70%;
+    }
 
     .start-quiz h1 {
         line-height: 65px;
@@ -430,5 +433,105 @@ header {
         padding: 12px 40px;
         font-size: 20px;
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1080px) {  
+    
+    h1 {
+        font-size: 86px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    /* -------------START QUIZ PAGE------------- */
+
+    .start {
+        width: 80%;
+    }
+
+    .start-quiz h1 {
+        line-height: 92px;
+    }
+    
+    .start-quiz button {
+        padding: 14px 40px;
+        font-size: 22px;
+    }
+
+
+    /* -----------------SCORE BOARD--------------------- */
+
+    /* .scores {
+        padding: 25px 40px;
+        padding-top: 60px;
+    }
+
+
+    .scores h2 {
+        font-size: 32px;
+        
+    }
+
+    .back-drop {
+        width: 10em;
+    }
+
+    .scores-container {
+        height: 80%;    
+    }
+
+    .scores-buttons button {
+        padding: 10px 30px;
+        margin: 0 2em;
+        margin-top: 20px;
+        font-size: 15px;
+    
+    }
+
+    .score-board {
+        padding: 13px 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
+
+    } */
+
+    /* ------------------QUESTIONS SECTION--------------------- */
+
+    /* .questions h3 {
+        font-size: 22px;
+    }
+
+    .choices {
+        width: 80%;
+    }
+    */
+
+    .question-choices p {
+        font-size: 16px;
+    } 
+    
+    /* --------------SCORE COMMENTS------------------------- */
+
+    /* .display-scores h2 {
+        max-width: 900px;
+        line-height: 4rem;
+        font-size: 4rem;
+    }
+
+    .display-scores p {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    #initials {
+        width: 80%;
+    }
+
+    #submit {
+        padding: 12px 40px;
+        font-size: 20px;
+    }  */
 }
 
