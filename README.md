@@ -6,6 +6,18 @@ The objective for this assignment was to create a Javascript quiz that allows th
 
 This assignment helped me to improve my problem-solving and critical thinking skills. There were hurdles and multiple bugs that I ran into along the way, but throughout the assignment, I taught myself to tackle problems one thing at a time rather than trying to get everything out of the way all at once. If I couldn't solve one problem, instead of focusing all my energy on it, I'd move on to the next section and get to my main issue later. This helped me to be more productive and reduced my stress for the time-being.
 
+GIVEN I am taking a code quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+WHEN I answer a question
+THEN I am presented with another question
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+WHEN the game is over
+THEN I can save my initials and score
+
 
 ## Usage
 
