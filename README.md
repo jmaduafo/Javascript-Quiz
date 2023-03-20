@@ -57,7 +57,7 @@ after the quiz is finished
 ![alt text](Develop/assets/javascript-quiz7.png)
 
 The user can then enter their initials in the input, and their score and initials gets recorded in
-the local storage
+the local storage after the "SUBMIT" button is clicked
 
 ![alt text](Develop/assets/javascript-quiz9.png)
 
