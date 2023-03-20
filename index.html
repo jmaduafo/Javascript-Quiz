@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500;1,6..96,600&family=Cinzel:wght@400;500;600;700&family=Elsie:wght@400;900&family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Italiana&family=Marcellus&family=Oranienbaum&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&family=Sofia+Sans+Semi+Condensed:wght@200&family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Javascript Quiz</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <header class="timer-header" id="header">
+                <div class="quiz-header">
+                    <div class="high-scores">
+                        <a href="#scores-list" id="scores-link"><p id="high-scores">View High Scores</p></a>
+                    </div>
+                    <div class="timer">
+                        <i class='bx bx-time-five'></i>
+                        <span id="timer">0</span>
+                    </div>
+                </div>
+            </header>
+            <section class="start" id="start-quiz">
+                <div class="start-quiz">
+                    <h1>How well do you know Javascript?</h1>
+                    <p>Test your knowledge and see if you can get these questions right in 75 seconds.</p>
+                    <button id="start">Start Quiz</button>
+                </div>
+            </section>
+            <section class="questions hidden" id="question-section">
+                <div class="quiz-container">
+                    <div class="choices">
+                        <div class="quiz-questions">
+                            <h3 id="question-heading">What is the "===" operator?</h3>
+                        </div>
+                    
+                        <div class="question-choices">
+                            <p id="question1">
+                                A strictly equal property that returns true when two operands have the same value and type.
+                            </p>
+                        </div>
+                        <div class="question-choices">
+                            <p id="question2">
+                                The equal property that returns true when two operands have the same value and type.
+                            </p>
+                        </div>
+                        <div class="question-choices">
+                            <p id="question3">
+                                A strictly equal property that returns true when three operands have the same value and type.
+                            </p>
+                        </div>
+                        <div class="question-choices">
+                            <p id="question4">
+                                This is not an operator in Javascript.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hidden" id="final-score">
+                <div class="display-scores">
+                    <h2 id="comment">Good, but could be better.</h2>
+                    <p>Your score is <span id="points">24</span></p>
+                    <input type="text" id="initials" maxlength="3" name="initials" placeholder="Enter your initials..." required>
+                    <button id="submit">Submit</button>
+                    
+                </div>
+            </section>
+            <section>
+                <div class="scores" id="scores-list">
+                    <h2>SCORES</h2>
+                    <div class="back-drop">
+                    </div>
+                    <div class="scores-container">
+                        
+                    </div>
+                    <div class="scores-buttons">
+                        <a href="#start-quiz"><button id="back">GO BACK</button></a>
+                        <button id="clear">CLEAR SCORES</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
