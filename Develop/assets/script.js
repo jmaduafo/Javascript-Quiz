@@ -68,35 +68,44 @@ $(document).ready(function() {
 
     let question = 0;
 
+    questionParagraph.each(function(index){
+        $(this).text(quizQuestions[question].answer[index].question);
+    })
+
     // Validates the questions to check if the answer chosen is correct
     questionChoice.each(function() {
         
         $(this).on("click", function(e) {
            
+            quizQuestions[question].answer.forEach(answer => {
+                console.log(answer.correct);
+                if (answer.correct && e.target.innerHTML.trim() === answer.question) {
+                    setTimeout(function() {
+                        $("#answer").removeClass("hidden");
+                        $("#answer").text("Correct!").css("color", "#35A700");
+                    }, 1500)
+                    $("#answer").addClass("hidden");
+                    
 
-            console.log(question)
-            console.log($(this))
-
-
-            console.log(quizQuestions[question].answer)
-            
-            // if (quizQuestions[question].answer.correct)  {
-            //     $(this).css("background-color", "#35A700")
-                                
-            // } else {
-            //     timerDown -= 15;
-            //      $(this).css("background-color", "#F00000");                
-            // }
-
-
+                } else if (!answer.correct && e.target.innerHTML.trim() === answer.question) {
+                    timerDown -= 15;
+                    setTimeout(function() {
+                        $("#answer").removeClass("hidden");
+                        $("#answer").text("Wrong!").css("color", "#F00000");
+                    }, 1500)
+                    $("#answer").addClass("hidden");
+                
+                    
+                   
+                }
+            })
+                
             if (question < 4) {
                 question++;
             } else {
                 question = question;
             }
             
-
-            console.log(question)
 
             displayQuestions(question);
 
@@ -111,7 +120,7 @@ $(document).ready(function() {
 
     // This function displays the questions presented in the JSON
     function displayQuestions(increase) {
-        if (question < 4) {
+        if (question < 4 && question >= 0) {
             mainQuestion.text(quizQuestions[increase].main);
 
             questionParagraph.each(function(index){
