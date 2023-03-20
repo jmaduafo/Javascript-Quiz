@@ -56,16 +56,16 @@ after the quiz is finished
 ![alt text](Develop/assets/javascript-quiz4.png)
 ![alt text](Develop/assets/javascript-quiz7.png)
 
-The user can then enter their initials in the input and their score and name gets recorded in
+The user can then enter their initials in the input, and their score and initials gets recorded in
 the local storage
 
+![alt text](Develop/assets/javascript-quiz9.png)
+
+Then their record is stored in the scoreboard
+![alt text](Develop/assets/javascript-quiz10.png)
+
+If the "GO BACK" button is clicked, then the user is taken back to the home page after the window reloads.
+"CLEAR SCORES" clears the scores displayed.
 
 
 
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Features
-
-Start quiz page/ questio
