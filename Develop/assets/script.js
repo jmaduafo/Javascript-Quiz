@@ -92,7 +92,9 @@ $(document).ready(function() {
                 // same as the question provided in the JSON, then the choice is incorrect
                 // Subtract 10 seconds from timer
                 } else if (!answer.correct && e.target.innerHTML.trim() === answer.question) {
-                    timerDown -= 10;
+                    if (timerDown >= 10) {
+                        timerDown -= 10;
+                    }
                     setTimeout(function() {
                         $("#answer").removeClass("hidden");
                         $("#answer").text("Wrong!").css("color", "#F00000");
@@ -177,17 +179,18 @@ $(document).ready(function() {
             $("#question-section").addClass("hidden")
         }
 
+        console.log(timerDown);
         points.text(timerDown);
 
-        if (timerDown <= 75 && timerDown >= 60) {
+        if (timerDown <= 75 && timerDown >= 55) {
             comment.text("You're a Javascript GOD!")
-        } else if (timerDown < 60 && timerDown >= 45) {
+        } else if (timerDown < 55 && timerDown >= 35) {
             comment.text("Impressive!")
-        } else if (timerDown < 45 && timerDown >= 21) {
+        } else if (timerDown < 35 && timerDown >= 21) {
             comment.text("Good, but could be better.")
         } else if (timerDown < 21 && timerDown >= 1) {
             comment.text("Not the best...")
-        } else if (timerDown === 0) {
+        } else if (timerDown <= 0) {
             comment.text("There's always next time!")
         }
         
